@@ -1,0 +1,22 @@
+function contarOcorrencias(caractere, string) {
+    // Inicializa a contagem
+    let contagem = 0;
+
+    // Percorre cada caractere da string
+    for (let i = 0; i < string.length; i++) {
+        // Verifica se o caractere atual é igual ao caractere fornecido
+        if (string[i] === caractere) {
+            contagem++;
+        }
+    }
+
+    // Retorna a contagem total
+    return contagem;
+}
+
+// Exemplo de uso
+const caractereDoUsuario = 'a'; // Caractere fornecido pelo usuário
+const stringDoUsuario = 'Beterraba'; // String fornecida pelo usuário
+
+const numeroDeOcorrencias = contarOcorrencias(caractereDoUsuario, stringDoUsuario);
+console.log(`O caractere "${caractereDoUsuario}" aparece ${numeroDeOcorrencias} vezes na string "${stringDoUsuario}".`);
