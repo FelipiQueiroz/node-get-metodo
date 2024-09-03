@@ -1,0 +1,13 @@
+function verificarAnoBissexto(ano) {
+    if ((ano % 4 === 0 && ano % 100 !== 0) || (ano % 400 === 0)) {
+        return `${ano} é um ano bissexto.`;
+    } else {
+        return `${ano} não é um ano bissexto.`;
+    }
+}
+
+// Exemplo de uso
+const anoDoUsuario = 2024; // Ano fornecido pelo usuário
+
+const resultado = verificarAnoBissexto(anoDoUsuario);
+console.log(resultado);
