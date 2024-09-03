@@ -1,0 +1,41 @@
+function gerarNumerosAleatorios() {
+    const numeros = new Set();
+    while (numeros.size < 6) {
+        const numeroAleatorio = Math.floor(Math.random() * 60) + 1;
+        numeros.add(numeroAleatorio);
+    }
+    return Array.from(numeros);
+}
+
+function contarAcertos(numerosUsuario, numerosSorteados) {
+    let acertos = 0;
+    for (let i = 0; i < numerosUsuario.length; i++) {
+        if (numerosSorteados.includes(numerosUsuario[i])) {
+            acertos++;
+        }
+    }
+    return acertos;
+}
+
+function simularLoteria(numerosUsuario) {
+    if (numerosUsuario.length !== 6) {
+        return "Você deve escolher exatamente 6 números.";
+    }
+
+    const numerosSorteados = gerarNumerosAleatorios();
+    const acertos = contarAcertos(numerosUsuario, numerosSorteados);
+
+    return {
+        numerosUsuario,
+        numerosSorteados,
+        acertos,
+    };
+}
+
+// Exemplo de uso
+const numerosEscolhidos = [3, 15, 22, 34, 41, 56]; // Números escolhidos pelo usuário
+const resultado = simularLoteria(numerosEscolhidos);
+
+console.log(`Números do usuário: ${resultado.numerosUsuario.join(', ')}`);
+console.log(`Números sorteados: ${resultado.numerosSorteados.join(', ')}`);
+console.log(`Você acertou ${resultado.acertos} número(s)!`);
