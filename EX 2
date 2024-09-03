@@ -1,0 +1,18 @@
+function calcularMontante(capitalInicial, taxaJurosMensal, tempoMeses) {
+    // Converter a taxa de juros de percentual para decimal
+    const taxaDecimal = taxaJurosMensal / 100;
+
+    // Aplicar a fórmula do montante
+    const montante = capitalInicial * Math.pow((1 + taxaDecimal), tempoMeses);
+
+    // Retornar o resultado formatado com duas casas decimais
+    return montante.toFixed(2);
+}
+
+// Exemplo de uso
+const capitalInicial = 1000; // Valor fornecido pelo usuário
+const taxaJurosMensal = 2; // 2% ao mês
+const tempoMeses = 12; // 12 meses
+
+const montanteFinal = calcularMontante(capitalInicial, taxaJurosMensal, tempoMeses);
+console.log(`O montante final do investimento é: R$ ${montanteFinal}`);
