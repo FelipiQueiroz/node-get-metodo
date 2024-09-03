@@ -1,0 +1,26 @@
+function encontrarMenorEMaior(numeros) {
+    if (numeros.length === 0) {
+        return "O array está vazio.";
+    }
+
+    let menor = numeros[0];
+    let maior = numeros[0];
+
+    for (let i = 1; i < numeros.length; i++) {
+        if (numeros[i] < menor) {
+            menor = numeros[i];
+        }
+
+        if (numeros[i] > maior) {
+            maior = numeros[i];
+        }
+    }
+
+    return `O menor número é ${menor} e o maior número é ${maior}.`;
+}
+
+// Exemplo de uso
+const arrayDeNumeros = [34, 7, 23, 32, 5, 62]; // Array fornecido pelo usuário
+
+const resultado = encontrarMenorEMaior(arrayDeNumeros);
+console.log(resultado);
